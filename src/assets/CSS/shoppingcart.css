@@ -1,0 +1,122 @@
+.nav-content {
+    width: 1200px;
+    margin: 15px auto;
+}
+
+.nav-content .w-top p {
+    font-family: 宋体;
+    margin-top: 15px;
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+.nav-content .w-top div ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    background-image: linear-gradient(#f5f4f5, #e6e6e5);
+    height: 36px;
+    color: #808080;
+    box-shadow: 2px 2px 4px #ccc;
+}
+
+body {
+    background-color: #eee;
+}
+
+/* 第一层 */
+.thing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.thing img {
+    display: block;
+}
+
+.thing .pro {
+    display: flex;
+    width: 380px;
+}
+
+.thing .pro>img {
+    width: 84px;
+    height: 84px;
+    padding: 0 6px 0 0;
+}
+
+.thing .pro>.p-con {
+    font-size: 14px;
+    color: #959595;
+    font-family: simhei, Arial, Helvetica, sans-serif;
+}
+
+.thing .pro>.p-con p {
+    margin-top: 5px;
+}
+
+/* 价格 */
+.price {
+    font-size: 12px;
+    color: #959595;
+}
+
+/* 计算 */
+.num {
+    display: flex;
+    border: 1px solid #959595;
+}
+
+.num button {
+    width: 20px;
+    height: 20px;
+    border: 0;
+}
+
+.num input {
+    width: 30px;
+    border: 0;
+    outline: 0;
+}
+
+.total,
+.caozuo {
+    font-size: 12px;
+    color: #959595;
+}
+
+/* 商品上下块 */
+.nav-content .w-bot .kuai ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 10px;
+    margin-top: 100px;
+    align-items: center;
+    background-image: linear-gradient(#f5f4f5, #e6e6e5);
+    height: 36px;
+    color: #808080;
+    box-shadow: 2px 2px 4px #ccc;
+}
+
+.nav-content .w-bot .kuai ul li button {
+    height: 36px;
+    width: 80px;
+    border: 0;
+    background-color: #0AA1ED;
+    color: #fff;
+}
+
+/* 品质保障 私人定制 */
+.nav-content .photo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 80px 0;
+}

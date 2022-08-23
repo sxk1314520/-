@@ -6,6 +6,26 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/shoppingcart',
+    name: 'shoppingcart',
+    component: () => import('../views/ShoppingCart.vue'),
+  },
+  {
+    path: '/productdetails',
+    name: 'productdetails',
+    component: () => import('../views/ProductDetails.vue'),
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/Register.vue'),
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/Login.vue'),
+  },
+  {
     path: '/',
     name: 'home',
     component: HomeView
