@@ -16,9 +16,15 @@
         style="display: flex; justify-content: space-between; user-select: none"
       >
         <div class="topnav-hd fl">
-          <img :src="data.data[0].img" alt="" class="img-boder" />
+          <swiper class="swiper" :options="swiperOption2" style="width: 430px">
+            <swiper-slide>
+              <div>
+                <img :src="nowImg" class="img-boder" />
+              </div>
+            </swiper-slide>
+          </swiper>
           <div style="width: 430px">
-            <a @click="ec.product.imgSilder.prev()" class="topnav-left">
+            <!-- <a @click="ec.product.imgSilder.prev()" class="topnav-left">
               <svg
                 t="1660654281496"
                 class="icon"
@@ -39,27 +45,41 @@
                   p-id="2041"
                   fill="#8a8a8a"
                 ></path></svg
-            ></a>
+            ></a> -->
             <div class="topnav-items">
-              <swiper>
+              <swiper class="swiper" :options="swiperOption">
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img"
+                    ><img :src="data.data[0].sm_img" alt=""
+                  /></a>
                 </swiper-slide>
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img2" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img2"
+                    ><img :src="data.data[0].sm_img2" alt=""
+                  /></a>
                 </swiper-slide>
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img"
+                    ><img :src="data.data[0].sm_img" alt=""
+                  /></a>
                 </swiper-slide>
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img2" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img2"
+                    ><img :src="data.data[0].sm_img2" alt=""
+                  /></a>
                 </swiper-slide>
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img"
+                    ><img :src="data.data[0].sm_img" alt=""
+                  /></a>
                 </swiper-slide>
                 <swiper-slide>
-                  <img :src="data.data[0].sm_img2" alt="" />
+                  <a @mouseover="nowImg = data.data[0].img2"
+                    ><img :src="data.data[0].sm_img2" alt=""
+                  /></a>
                 </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
               </swiper>
               <!-- <ul class="topnav-items-ul">
                 <li>
@@ -82,7 +102,7 @@
                 </li>
               </ul> -->
             </div>
-            <a @click="ec.product.imgSilder.next()" class="topnav-right"
+            <!-- <a @click="ec.product.imgSilder.next()" class="topnav-right"
               ><svg
                 t="1660654607944"
                 class="icon"
@@ -103,7 +123,7 @@
                   p-id="3145"
                   fill="#8a8a8a"
                 ></path></svg
-            ></a>
+            ></a> -->
           </div>
         </div>
         <div class="topnav-bd fr">
@@ -252,22 +272,22 @@
           <div class="topnav-last-bottom">
             <div class="left fl">
               <div class="topnav-last-hd fl">
-                <input type="text" value="0" />
+                <span>{{ count }}</span>
               </div>
               <div class="topnav-last-bd fl">
-                <a href="javascript:;">
+                <a href="javascript:;" @click="count += 1">
                   <span class="jia">+</span>
                 </a>
                 <a href="javascript:;">
-                  <span class="jian">-</span>
+                  <span class="jian" @click="sub('a', $event)">-</span>
                 </a>
               </div>
             </div>
             <div class="right fr">
-              <a href="javascript:;">加入购物车</a>
+              <a href="/shoppingcart" @click="addCard()">加入购物车</a>
             </div>
             <div class="right1 fr">
-              <a href="javascript:;">立即下单</a>
+              <a href="/notfount">立即下单</a>
             </div>
           </div>
         </div>
@@ -277,72 +297,7 @@
 
     <!-- 最下方的猜你喜欢部分 start 放到新的模块，不要继续放到tionav-bd-end里面，效果出不来，会在end的最上方显示-->
     <!-- 猜你喜欢 -->
-    <!-- <div class="w">
-      <div class="cnxh">
-        <div class="cnxh-hd">
-          <span>猜你喜欢</span>
-        </div>
-        <div class="cnxh-bd">
-          <ul>
-            <li class="cnxh-bd-frist-li">
-              <img src="upload/end-last-items_03.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                DELL 戴尔 Ins 15MR-75<br />
-                28SS 15英寸 银色 笔记
-              </div>
-              <p>¥6699.00</p>
-              <div class="cnxh-last-wz">已有6人评价</div>
-            </li>
-            <li>
-              <img src="upload/end-last-items_05.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                Apple/苹果 iPhone 6s/6<br />
-                s Plus 16G 64G 128G
-              </div>
-              <p>¥4699.00</p>
-              <div class="cnxh-last-wz">已有66人评价</div>
-            </li>
-            <li>
-              <img src="upload/end-last-items_07.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                JBL OnBeat Rumble 无<br />
-                线蓝牙派对节拍多媒体音
-              </div>
-              <p>¥199.99</p>
-              <div class="cnxh-last-wz">已有666人评价</div>
-            </li>
-            <li>
-              <img src="upload/end-last-items_09.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                EXCO宜适酷 全屏钢化玻<br />
-                璃膜For iPhone6s/6Plu
-              </div>
-              <p>¥0.99</p>
-              <div class="cnxh-last-wz">已有6666人评价</div>
-            </li>
-            <li>
-              <img src="upload/end-last-items_11.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                Apple 苹果 iPhone 6（A1<br />
-                586）16G 金色 移动联通
-              </div>
-              <p>¥3799.00</p>
-              <div class="cnxh-last-wz">已有66666人评价</div>
-            </li>
-            <li>
-              <img src="upload/end-last-items_13.png" alt="" />
-              <div class="comoon-cnxh-wz">
-                半岛铁盒移动电源A2200<br />
-                白色 2200mAh
-              </div>
-              <p>¥19.99</p>
-              <div class="cnxh-last-wz">已有666666人评价</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-
+    <my-like/>
     <!--商品详情-->
     <div id="iteminfo">
       <div id="tab">
@@ -561,8 +516,9 @@
 <script>
 import TopHeader from "@/components/TopHeader.vue";
 import MyFooter from "@/components/MyFooter.vue";
+import MyLike from '@/components/MyLike.vue';
 export default {
-  components: { TopHeader, MyFooter },
+  components: { TopHeader, MyFooter, MyLike },
   computed: {
     p() {
       return this.data.product;
@@ -574,20 +530,41 @@ export default {
       return this.$route.query.lid;
     },
   },
+
   data() {
     return {
       active: false,
       data: null,
-      index: 0,
-      edi: 0,
-      net: 0,
-      ser: 0,
-      pro: 0,
+      index: 1,
+      edi: 1,
+      net: 1,
+      ser: 1,
+      pro: 1,
+      count: 1,
+      nowImg: 1,
+      swiperOption: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+      },
+      swiperOption2: {
+        zoom: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      },
     };
+  },
+  created() {
+    this.getData();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll, true);
-    this.getData();
+    // this.getData();
   },
   watch: {
     nowLid() {
@@ -595,6 +572,25 @@ export default {
     },
   },
   methods: {
+    addCard() {
+      alert("成功加入购物车！");
+      const url = "http://127.0.0.1:3000/v1/cart/add";
+      console.log("url:", url);
+      const params=`img=${this.data.data[0].sm_img}&hname=${this.data.data[0].title}&cpu=${this.data.data[0].spec}&price=${this.data.data[0].price}&count=${1}&is_checked=${0}`
+      console.log(params)
+      this.axios.post(url,params).then((res) => {
+        this.data = res.data;
+        console.log(res);
+      });
+    },
+    sub: function (value, e) {
+      console.log(value);
+      console.log(e);
+      // if(this.count>0){
+      // 	this.count--
+      // }
+      this.count > 0 && this.count--;
+    },
     protect(i) {
       this.pro = i;
     },
@@ -611,7 +607,7 @@ export default {
       this.index = i;
     },
     handleScroll() {
-      if (window.pageYOffset > 780) {
+      if (window.pageYOffset > 1145) {
         this.active = true;
         console.log(this.active);
       } else {
@@ -626,6 +622,7 @@ export default {
       this.axios.get(url).then((res) => {
         this.data = res.data;
         console.log(res);
+        this.nowImg = res.data.data[0].img;
       });
     },
   },
@@ -633,11 +630,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.swiper-wrapper{
-  width: 432px;
+.alert{
+  margin-top: 500px !important;
 }
-.swiper-slide{
-  width: 78px;
+.topnav-items .swiper-slide {
+  width: 78px !important;
+  margin-left: 30px;
 }
 .topnav {
   height: 638px;
@@ -694,11 +692,11 @@ export default {
 }
 
 .topnav-hd {
-  width: 400px;
+  width: 430px;
   height: 588px;
 }
 
-.topnav-items-ul {
+swiper-slide {
   width: 346px;
   height: 76px;
   margin: 0 auto;
@@ -707,7 +705,7 @@ export default {
   white-space: nowrap;
 }
 
-.topnav-items-ul li {
+swiper-slide img {
   float: left;
   margin: 0 4px;
   list-style: none;
@@ -716,6 +714,11 @@ export default {
 
 .topnav-items {
   position: relative;
+
+  .swiper-button-prev {
+    position: absolute;
+    left: 0px;
+  }
 }
 
 .items-dw2,
@@ -793,6 +796,11 @@ export default {
 .topnav-hd .img-boder {
   border: 1px solid #fff;
   border-top: none; /*图片截的上面有边框，没截好*/
+}
+.topnav-hd + img:hover {
+  transform: scale(1.5);
+
+  z-index: 100;
 }
 
 .topnav-bd {
@@ -987,9 +995,11 @@ export default {
   display: flex;
 }
 
-.topnav-last-bottom input {
+.topnav-last-bottom span {
+  display: inline-block;
   width: 35px;
   height: 47px;
+  line-height: 47px;
   border: 1px solid #cccccc;
   /*不算到盒子里，加上边框后应该是45，现在正常是47px的基础上加上边框，即内部高度45，上下1px边框，合适*/
   box-sizing: border-box;
@@ -1026,7 +1036,7 @@ export default {
   /*件数是1，用css实现jian模块禁止单击效果*/
 }
 
-.topnav-last-bd input {
+.topnav-last-bd span {
   outline: none;
   border: none;
 }

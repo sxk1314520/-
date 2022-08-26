@@ -6,6 +6,21 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/mysearch',
+    name: 'mysearch',
+    component: () => import('../views/MySearch.vue'),
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/About.vue'),
+  },
+  {
+    path: '/notfount',
+    name: 'notfount',
+    component: () => import('../views/NotFount.vue'),
+  },
+  {
     path: '/shoppingcart',
     name: 'shoppingcart',
     component: () => import('../views/ShoppingCart.vue'),

@@ -6,15 +6,15 @@
         <div class="container">
           <div class="pull-left">
             <a href="/">首页</a>
-            <a>华为官网</a>
-            <a href="">花粉俱乐部</a>
+            <a href="/">华为官网</a>
+            <a href="/">花粉俱乐部</a>
           </div>
           <div class="pull-right">
             <!-- <div>
               <a href="">客服</a>
               <p class="customer">电话：13652356200</p>
             </div> -->
-            <a href="">
+            <a href="#">
               <span
                 ><svg
                   t="1660137952396"
@@ -66,41 +66,51 @@
                   ></path></svg
               ></span>
             </a>
+            <a v-if="$store.state.uname"
+              >欢迎：{{ $store.state.uname }}&nbsp;&nbsp;&nbsp;&nbsp;<button
+                @click="$store.commit('updateUname')"
+                class="a_button"
+              >
+                退出
+              </button></a
+            >
+            <template v-else>
+              <a href="/login">
+                <span>
+                  <svg
+                    t="1660136512479"
+                    class="icon"
+                    viewBox="0 0 1024 1024"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    p-id="2288"
+                    width="11"
+                    height="11"
+                  >
+                    <path
+                      d="M512 590.75c-142.5 0-258.75-116.25-258.75-258.75s116.25-262.5 258.75-262.5 258.75 116.25 258.75 258.75-116.25 262.5-258.75 262.5zM512 144.5c-101.25 0-183.75 82.5-183.75 183.75s82.5 183.75 183.75 183.75 183.75-82.5 183.75-183.75-82.5-183.75-183.75-183.75z"
+                      p-id="2289"
+                      fill="#e6e6e6"
+                    ></path>
+                    <path
+                      d="M170.75 950.75c-18.75 0-37.5-15-37.5-37.5 0-7.5 0-11.25 0-15 0-210 172.5-382.5 382.5-382.5 22.5 0 37.5 15 37.5 37.5s-15 37.5-37.5 37.5c-168.75 0-307.5 138.75-307.5 307.5v11.25c0 22.5-18.75 41.25-37.5 41.25v0z"
+                      p-id="2290"
+                      fill="#e6e6e6"
+                    ></path>
+                    <path
+                      d="M853.25 947v0c-22.5 0-37.5-15-37.5-37.5v-11.25c0-168.75-138.75-307.5-307.5-307.5-22.5 0-37.5-15-37.5-37.5s15-37.5 37.5-37.5c210 0 382.5 172.5 382.5 382.5 0 3.75 0 7.5 0 11.25 0 22.5-15 37.5-37.5 37.5z"
+                      p-id="2291"
+                      fill="#e6e6e6"
+                    ></path>
+                  </svg>
+                </span>
 
-            <a href="/login">
-              <span>
-                <svg
-                  t="1660136512479"
-                  class="icon"
-                  viewBox="0 0 1024 1024"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  p-id="2288"
-                  width="11"
-                  height="11"
-                >
-                  <path
-                    d="M512 590.75c-142.5 0-258.75-116.25-258.75-258.75s116.25-262.5 258.75-262.5 258.75 116.25 258.75 258.75-116.25 262.5-258.75 262.5zM512 144.5c-101.25 0-183.75 82.5-183.75 183.75s82.5 183.75 183.75 183.75 183.75-82.5 183.75-183.75-82.5-183.75-183.75-183.75z"
-                    p-id="2289"
-                    fill="#e6e6e6"
-                  ></path>
-                  <path
-                    d="M170.75 950.75c-18.75 0-37.5-15-37.5-37.5 0-7.5 0-11.25 0-15 0-210 172.5-382.5 382.5-382.5 22.5 0 37.5 15 37.5 37.5s-15 37.5-37.5 37.5c-168.75 0-307.5 138.75-307.5 307.5v11.25c0 22.5-18.75 41.25-37.5 41.25v0z"
-                    p-id="2290"
-                    fill="#e6e6e6"
-                  ></path>
-                  <path
-                    d="M853.25 947v0c-22.5 0-37.5-15-37.5-37.5v-11.25c0-168.75-138.75-307.5-307.5-307.5-22.5 0-37.5-15-37.5-37.5s15-37.5 37.5-37.5c210 0 382.5 172.5 382.5 382.5 0 3.75 0 7.5 0 11.25 0 22.5-15 37.5-37.5 37.5z"
-                    p-id="2291"
-                    fill="#e6e6e6"
-                  ></path>
-                </svg>
-              </span>
+                <span class="text"> 登录 </span>
+              </a>
+              <a href="/register">注册</a>
+            </template>
 
-              <span class="text"> 登录 </span>
-            </a>
-            <a href="/register">注册</a>
-            <a href="">我的订单</a>
+            <a href="/notfount">我的订单</a>
             <a href="/shoppingcart">
               <svg
                 t="1660220089024"
@@ -135,13 +145,13 @@
         </div>
         <div class="navitems">
           <ul>
-            <li><a href="#">华为专区</a></li>
-            <li><a href="#">鸿蒙智联</a></li>
-            <li><a href="#">莫塞尔</a></li>
-            <li><a href="#">华为智选</a></li>
-            <li><a href="#">HarmonyOS</a></li>
-            <li><a href="#">特惠企采</a></li>
-            <li><a href="#">教育购</a></li>
+            <li><a href="/">华为专区</a></li>
+            <li><a href="/">鸿蒙智联</a></li>
+            <li><a href="/">莫塞尔</a></li>
+            <li><a href="/">华为智选</a></li>
+            <li><a href="/">HarmonyOS</a></li>
+            <li><a href="/">特惠企采</a></li>
+            <li><a href="/about">关于我们</a></li>
           </ul>
         </div>
       </div>
@@ -149,10 +159,12 @@
     <div>
       <el-input
         v-model="input"
-        placeholder="请输入内容"
+        placeholder="搜索商品"
         class="el-input"
-      ></el-input>
-      <el-button icon="el-icon-search" circle></el-button>
+      ></el-input
+      ><a @click="search">
+        <el-button icon="el-icon-search" circle></el-button
+      ></a>
     </div>
   </div>
 </template>
@@ -161,7 +173,13 @@
 export default {
   data() {
     return {
-      input:''
+      input: "",
+    };
+  },
+  methods: {
+    search() {
+      console.log(this.input)
+      this.$router.push('/mysearch?title='+this.input)
     }
   },
 };
@@ -234,6 +252,10 @@ export default {
   float: left;
   list-style: none;
 }
+.navitems ul li:hover {
+  background-color: #ddddddb7;
+  border-bottom: 3px solid red;
+}
 .navitems ul li a {
   display: block;
   height: 45px;
@@ -246,5 +268,11 @@ export default {
   padding-left: 900px;
   width: 500px;
   padding-top: 10px;
+}
+.a_button {
+  background-color: #111111;
+  font-size: 12px;
+  color: #ccc;
+  width: auto;
 }
 </style>

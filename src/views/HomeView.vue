@@ -95,6 +95,9 @@
     <!-- 首页模板 -->
     <home-module/>
 
+    <!-- 猜你喜歡 -->
+    <my-like/>
+
 
     <!-- 侧边回到顶部 -->
     <div>
@@ -109,8 +112,9 @@ import MyFooter from '@/components/MyFooter.vue';
 import MyShopping from '@/components/MyShopping.vue';
 import HomeModule from '@/components/HomeModule.vue';
 import TopHeader from '@/components/TopHeader.vue';
+import MyLike from '@/components/MyLike.vue';
 export default {
-  components: { MyFooter, MyShopping, HomeModule, TopHeader },
+  components: { MyFooter, MyShopping, HomeModule, TopHeader, MyLike },
   data() {
     return {
       swiperOption: {
@@ -154,6 +158,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.swiper-slide img{
+  user-select: none;
+}
 .swiper {
   width: 100%;
   margin: 5px auto;
@@ -262,10 +269,15 @@ export default {
   justify-content: space-between;
   margin: 30px auto;
 
+  div:hover {
+    box-shadow: 0 11px 11px 0 rgb(0 0 0 / 15%);
+  }
+
 
   img {
     width: 291px;
     height: 100%;
+    user-select: none;
   }
 }
 </style>

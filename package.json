@@ -12,6 +12,7 @@
     "element-ui": "^2.15.9",
     "swiper": "^5.4.5",
     "vue": "^2.6.14",
+    "vue-amap": "^0.5.10",
     "vue-awesome-swiper": "^4.1.1",
     "vue-axios": "^3.4.1",
     "vue-router": "^3.5.1",

@@ -1,0 +1,69 @@
+.about {
+    width: 1200px;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutl {
+    width: 800px;
+    /* margin: 50px 0; */
+    /* background-color: red; */
+    /* border: 1px solid black; */
+    box-shadow: 1px 10px 12px rgba(0 0 0 /10%);
+}
+
+.aboutr {
+    width: 400px;
+    background-color: #FdFbFA;
+    box-shadow: 1px 10px 12px rgba(0 0 0 /10%);
+    padding: 60px 0 0 30px;
+}
+
+.amap-wrapper {
+    width: 800px;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#nav {
+    padding: 30px;
+}
+
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+    color: #42b983;
+}
+h1{
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.p0{
+    height: 60px;
+    line-height: 60px;
+    margin-left: 7px;
+}
+.p1{
+    font-size: 21px;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    color: #777e87;
+}
+.p2{
+    font-size: 19px;
+    font-weight: bold;
+    color: #383e46;
+}

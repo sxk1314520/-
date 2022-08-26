@@ -215,6 +215,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mokuai>div:hover{
+  box-shadow: 0 11px 11px 0 rgb(0 0 0 / 15%);
+}
 .module {
   margin-top: 24.01px;
   box-sizing: border-box;

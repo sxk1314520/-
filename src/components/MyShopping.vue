@@ -128,6 +128,14 @@ export default {
     margin-top: -12px;
     margin-left: -12px;
 
+    & >div:first-child>img:hover{
+      box-shadow: 0 11px 11px 0 rgb(0 0 0 / 15%);
+    }
+
+    & >div>div:hover{
+      box-shadow: 0 11px 11px 0 rgb(0 0 0 / 15%);
+    }
+
     .bk-first {
       -webkit-box-align: center;
       align-items: center;
@@ -152,6 +160,7 @@ export default {
       & img {
         height: 100%;
         width: 100%;
+        user-select: none;
       }
     }
 

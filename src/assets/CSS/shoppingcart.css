@@ -84,6 +84,7 @@ body {
     width: 30px;
     border: 0;
     outline: 0;
+    text-align: center;
 }
 
 .total,
@@ -104,6 +105,11 @@ body {
     height: 36px;
     color: #808080;
     box-shadow: 2px 2px 4px #ccc;
+}
+
+.nav-content .w-bot .kuai ul .total{
+    display: flex;
+    margin-right: -900px;
 }
 
 .nav-content .w-bot .kuai ul li button {
